@@ -38,7 +38,7 @@ public class BoletoBuilderBB implements BoletoBuilder {
     public BoletoBuilder adicionarCedente(String... informacoesCedente) {
         if (informacoesCedente != null) {
             for (int i = 0; i < informacoesCedente.length; i++) {
-                sacado.add(informacoesCedente[i]);
+                cedente.add(informacoesCedente[i]);
             }
         }
         return this;
