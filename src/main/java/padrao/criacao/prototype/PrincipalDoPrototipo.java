@@ -3,38 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package padrao.criacao.prototype.objeto;
+package padrao.criacao.prototype;
 
 import java.util.ArrayList;
 import java.util.List;
+import padrao.criacao.prototype.objeto.AnuncioDoPrototipo;
+import padrao.criacao.prototype.objeto.CampanhaDoPrototipo;
+import padrao.criacao.prototype.objeto.Prototipo;
 
 /**
  *
  * @author Fabio
  */
-public class Principal {
+public class PrincipalDoPrototipo {
+
     public static void main(String[] args) throws CloneNotSupportedException {
-        Anuncio a1 = new Anuncio();
-        a1.setTitulo("Caneta 10");
-        a1.setTexto("Vendo caneta");
-        Anuncio a2 = new Anuncio();
-        a2.setTitulo("Lápis 10");
-        a2.setTexto("Vendo lápis");
-        
-        List<Anuncio> anuncios = new ArrayList<>();
+        AnuncioDoPrototipo a1 = new AnuncioDoPrototipo("Caneta R$ 5,00", "Vendo caneta especial");
+
+        AnuncioDoPrototipo a2 = new AnuncioDoPrototipo();
+        a2.setTitulo("Lápis barato");
+        a2.setTexto("Vendo lápis B2 por R$ 0,50");
+
+        List<AnuncioDoPrototipo> anuncios = new ArrayList<>();
         anuncios.add(a1);
         anuncios.add(a2);
-        
-        Campanha campanha = new Campanha();
-        campanha.setNome("Teste");
-        campanha.setAnuncios(anuncios);
-        
+
+        Prototipo campanha = new CampanhaDoPrototipo("Volta às aulas!", anuncios);
         System.out.println(campanha);
-        
-        System.out.println("--------");
-        
-        Campanha campanhaClonada = (Campanha) campanha.clone();
+
+        System.out.println("--------\n");
+
+        Prototipo campanhaClonada = campanha.clonar();
         System.out.println(campanhaClonada);
-        
+
+        System.out.println("--------\n");
+
+        System.out.println(campanha == campanhaClonada);
+        System.out.println(campanha.equals(campanhaClonada));
+        System.out.println(((CampanhaDoPrototipo) campanha).getNome() == ((CampanhaDoPrototipo) campanhaClonada).getNome());
+        System.out.println(((CampanhaDoPrototipo) campanha).getAnuncios() == ((CampanhaDoPrototipo) campanhaClonada).getAnuncios());
+        for (int i = 0; i < ((CampanhaDoPrototipo) campanha).getAnuncios().size(); i++) {
+            System.out.println("\t" + (((CampanhaDoPrototipo) campanha).getAnuncios().get(i) == ((CampanhaDoPrototipo) campanhaClonada).getAnuncios().get(i)));
+        }
     }
 }

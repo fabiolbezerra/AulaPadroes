@@ -17,6 +17,11 @@ public class Anuncio implements Cloneable {
     public Anuncio() {
     }
 
+    public Anuncio(String titulo, String texto) {
+        this.titulo = titulo;
+        this.texto = texto;
+    }
+
     public String getTitulo() {
         return titulo;
     }

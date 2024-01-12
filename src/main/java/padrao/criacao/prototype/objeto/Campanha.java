@@ -19,6 +19,11 @@ public class Campanha implements Cloneable {
     public Campanha() {
     }
 
+    public Campanha(String nome, List<Anuncio> anuncios) {
+        this.nome = nome;
+        this.anuncios = anuncios;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -38,17 +43,17 @@ public class Campanha implements Cloneable {
     @Override
     public Object clone() throws CloneNotSupportedException {
         Campanha object = (Campanha) super.clone();
-        return object; 
+        return object;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Anúncios da Campanha \"").append(nome).append("\":\n\n");
+        sb.append("Anúncios da Campanha \"").append(nome).append("\":\n");
         for (Anuncio a : anuncios) {
-            sb.append(a.toString()).append('\n');
+            sb.append("** ").append(a.toString()).append('\n');
         }
-        return sb.toString(); 
+        return sb.toString();
     }
 
 }
