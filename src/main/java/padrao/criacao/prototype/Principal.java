@@ -3,31 +3,38 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package padrao.criacao.prototype;
+package padrao.criacao.prototype.objeto;
 
-import padrao.criacao.prototype.objeto.Anuncio;
-import padrao.criacao.prototype.objeto.Campanha;
-import padrao.criacao.prototype.prototipador.CampanhaAnual;
-import padrao.criacao.prototype.prototipador.CampanhaVerao;
-import padrao.criacao.prototype.prototipador.Prototipo;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Fabio
  */
 public class Principal {
-
     public static void main(String[] args) throws CloneNotSupportedException {
-        Prototipo<Campanha> prototipadorAnual = new CampanhaAnual();
-        Campanha campanhaAnual = prototipadorAnual.clonar();
-        for (Anuncio a : campanhaAnual.getAnuncios()) {
-            a.setTitulo(a.getTitulo() + " (10%)");
-        }
-        System.out.println(campanhaAnual);
-
-        Prototipo<Campanha> prototipadorVerao = new CampanhaVerao();
-        Campanha campanhaDeInverno = prototipadorVerao.clonar();
-        campanhaDeInverno.setNome("Campanha de Inverno igual a do Verão");
-        System.out.println(campanhaDeInverno);
+        Anuncio a1 = new Anuncio();
+        a1.setTitulo("Caneta 10");
+        a1.setTexto("Vendo caneta");
+        Anuncio a2 = new Anuncio();
+        a2.setTitulo("Lápis 10");
+        a2.setTexto("Vendo lápis");
+        
+        List<Anuncio> anuncios = new ArrayList<>();
+        anuncios.add(a1);
+        anuncios.add(a2);
+        
+        Campanha campanha = new Campanha();
+        campanha.setNome("Teste");
+        campanha.setAnuncios(anuncios);
+        
+        System.out.println(campanha);
+        
+        System.out.println("--------");
+        
+        Campanha campanhaClonada = (Campanha) campanha.clone();
+        System.out.println(campanhaClonada);
+        
     }
 }
