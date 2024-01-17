@@ -13,7 +13,7 @@ import padrao.estrutural.adapter.novo.BibliotecaNova;
  *
  * @author Fabio
  */
-public class PrincipalComAdapter {
+public class SistemaDeRH {
 
     public static void main(String[] args) {
         ControleDePonto controleDePonto = new ControleDePontoAdapter(new BibliotecaNova());
