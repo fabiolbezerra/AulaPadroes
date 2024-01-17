@@ -9,13 +9,9 @@ package padrao.estrutural.adapter.atual;
  *
  * @author Fabio
  */
-public class ControleDePonto {
+public interface ControleDePonto {
 
-    public void registraEntrada(Funcionario funcionario) {
-        System.out.println("Registrando Entrada do Funcionário " + funcionario.getNome());
-    }
+    void registraEntrada(Funcionario funcionario);
 
-    public void registraSaida(Funcionario funcionario) {
-        System.out.println("Registrando Saída do Funcionário " + funcionario.getNome());
-    }
+    void registraSaida(Funcionario funcionario);
 }

@@ -7,7 +7,7 @@ package padrao.estrutural.adapter;
 
 import padrao.estrutural.adapter.atual.ControleDePonto;
 import padrao.estrutural.adapter.atual.Funcionario;
-import padrao.estrutural.adapter.novo.ControleDePontoNovo;
+import padrao.estrutural.adapter.novo.BibliotecaNova;
 
 /**
  *
@@ -16,12 +16,12 @@ import padrao.estrutural.adapter.novo.ControleDePontoNovo;
 public class PrincipalComAdapter {
 
     public static void main(String[] args) {
-        ControleDePonto controleDePonto = new ControleDePontoAdapter(new ControleDePontoNovo());
+        ControleDePonto controleDePonto = new ControleDePontoAdapter(new BibliotecaNova());
         Funcionario funcionario = new Funcionario();
         funcionario.setId(1);
         funcionario.setNome("Fábio");
         controleDePonto.registraEntrada(funcionario);
-        System.out.println("depois de 8h ...");
+        System.out.println("\n-.-.-.-\n");
         controleDePonto.registraSaida(funcionario);
     }
 }

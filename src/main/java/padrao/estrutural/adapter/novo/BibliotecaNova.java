@@ -6,16 +6,15 @@
 package padrao.estrutural.adapter.novo;
 
 /**
- *
  * @author Fabio
  */
-public class ControleDePontoNovo {
+public class BibliotecaNova {
 
     public void registra(int idDoFuncionario, boolean entrada) {
         if (entrada) {
-            System.out.println("ControleDePontoNovo Registrando Entrada do Funcionário " + idDoFuncionario);
+            System.out.println("BibliotecaNova: Registrando entrada do funcionário " + idDoFuncionario);
         } else {
-            System.out.println("ControleDePontoNovo Registrando Saída do Funcionário " + idDoFuncionario);
+            System.out.println("BibliotecaNova: Registrando saída do funcionário " + idDoFuncionario);
         }
     }
 }

@@ -5,21 +5,21 @@
  */
 package padrao.estrutural.adapter;
 
+import padrao.estrutural.adapter.atual.BibliotecaAntiga;
 import padrao.estrutural.adapter.atual.ControleDePonto;
 import padrao.estrutural.adapter.atual.Funcionario;
 
 /**
- *
  * @author Fabio
  */
 public class PrincipalSemAdapter {
     public static void main(String[] args) {
-        ControleDePonto controleDePonto = new ControleDePonto();
+        ControleDePonto controleDePonto = new BibliotecaAntiga();
         Funcionario funcionario = new Funcionario();
         funcionario.setId(1);
         funcionario.setNome("Fábio");
         controleDePonto.registraEntrada(funcionario);
-        System.out.println("depois de 8h ...");
+        System.out.println("\n-.-.-.-\n");
         controleDePonto.registraSaida(funcionario);
     }
 }

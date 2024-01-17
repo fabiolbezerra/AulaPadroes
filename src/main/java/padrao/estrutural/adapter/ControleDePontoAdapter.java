@@ -7,17 +7,17 @@ package padrao.estrutural.adapter;
 
 import padrao.estrutural.adapter.atual.ControleDePonto;
 import padrao.estrutural.adapter.atual.Funcionario;
-import padrao.estrutural.adapter.novo.ControleDePontoNovo;
+import padrao.estrutural.adapter.novo.BibliotecaNova;
 
 /**
  *
  * @author Fabio
  */
-public class ControleDePontoAdapter extends ControleDePonto {
+public class ControleDePontoAdapter implements ControleDePonto {
 
-    private ControleDePontoNovo controle;
+    private BibliotecaNova controle;
 
-    public ControleDePontoAdapter(ControleDePontoNovo controle) {
+    public ControleDePontoAdapter(BibliotecaNova controle) {
         this.controle = controle;
     }
 
