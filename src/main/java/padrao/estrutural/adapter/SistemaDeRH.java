@@ -26,13 +26,13 @@ public class SistemaDeRH {
         ControleDePonto controleDePonto = null;
 
         //Integração com a biblioteca antiga
-        controleDePonto = new BibliotecaAntiga();
-        controleDePonto.registraEntrada(funcionario);
-        System.out.println("\n-.-.-.-\n");
-        controleDePonto.registraSaida(funcionario);
+        //controleDePonto = new BibliotecaAntiga();
 
         //Integração com a biblioteca nova (adaptada para a mesma interface)
         controleDePonto = new ControleDePontoAdapter(new BibliotecaNova());
+
+        //Usando o controle de ponto
+        //Independe da biblioteca de controle de ponto adotada
         controleDePonto.registraEntrada(funcionario);
         System.out.println("\n-.-.-.-\n");
         controleDePonto.registraSaida(funcionario);
