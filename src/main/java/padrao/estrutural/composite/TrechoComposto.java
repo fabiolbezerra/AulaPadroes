@@ -6,8 +6,7 @@ public class TrechoComposto implements TrechoAereo {
     private TrechoAereo segundo;
     private double taxaconexao;
 
-    public TrechoComposto(TrechoAereo primeiro, TrechoAereo segundo,
-            double taxaconexao) {
+    public TrechoComposto(TrechoAereo primeiro, TrechoAereo segundo, double taxaconexao) {
         this.primeiro = primeiro;
         this.segundo = segundo;
         this.taxaconexao = taxaconexao;
