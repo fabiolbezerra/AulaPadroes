@@ -1,4 +1,4 @@
-package padrao.estrutural.decorator;
+package padrao.estrutural.decorator.bebida;
 
 public class MisturaDaCasa extends Bebida {
 

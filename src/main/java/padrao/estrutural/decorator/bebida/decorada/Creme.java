@@ -1,4 +1,6 @@
-package padrao.estrutural.decorator;
+package padrao.estrutural.decorator.bebida.decorada;
+
+import padrao.estrutural.decorator.bebida.Bebida;
 
 public class Creme extends BebidaDecorada {
 
