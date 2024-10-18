@@ -6,12 +6,11 @@ import java.util.List;
 public class Pedido {
 
     private int numero;
-    private List<Item> itens;
+    private List<Item> itens = new ArrayList<>();
     private double total;
 
     public Pedido(int numero) {
         this.numero = numero;
-        this.itens = new ArrayList<>();
     }
 
     public int getNumero() {
@@ -28,7 +27,8 @@ public class Pedido {
 
     public void imprimirItens() {
         for (Item item : itens) {
-            System.out.println(item.getNome() + ": " + item.getPreco());
+            System.out.println(item.getNome() + ": " + item.getObservacao());
+            System.out.printf("\tR$ %.2f\n", item.getPreco());
         }
     }
 

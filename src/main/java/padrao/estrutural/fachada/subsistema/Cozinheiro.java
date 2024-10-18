@@ -8,6 +8,10 @@ public class Cozinheiro {
         this.nome = nome;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public void preparar(Garcom garcom, Pedido pedido) {
         System.out.println(garcom.getNome() + " já vou providenciar: ");
         for (Item item : pedido.getItens()) {

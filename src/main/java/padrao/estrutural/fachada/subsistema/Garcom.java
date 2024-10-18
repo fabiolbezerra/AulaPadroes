@@ -20,9 +20,9 @@ public class Garcom {
     public void receberPedido(String pedido, int mesa) {
         System.out.println("Olá, estou anotando: " + pedido);
         Pedido p = new Pedido((int) (Math.random() * 1000));
-        Item i1 = new Item("Filé", 65);
+        Item i1 = new Item("Filé", 65, "Ao ponto");
         p.adicionar(i1);
-        Item i2 = new Item("Vinho", 105);
+        Item i2 = new Item("Vinho", 105, "");
         p.adicionar(i2);
         pedidos.put(p, mesa);
         System.out.println("Seu pedido em breve ficará pronto.");
@@ -36,17 +36,19 @@ public class Garcom {
     }
 
     public void cobrarPedido(int mesa) {
-        System.out.println("Olá. A conta da mesa " + mesa + ". Seus pedidos foram: ");
+        System.out.println("Olá. A conta da mesa " + mesa + ".");
         double total = 0;
         Gerente gerente = new Gerente("Junior");
         for (Pedido pedido : pedidos.keySet()) {
+            System.out.println("Localizando pedido da mesa " + mesa + "...");
             if (pedidos.get(pedido) == mesa) {
+                System.out.println("O pedido foi: ");
                 pedido.imprimirItens();
                 total += pedido.getTotal();
                 gerente.receber(pedido);
             }
         }
-        System.out.println("TOTAL: " + total);
+        System.out.printf("TOTAL: R$ %.2f\n", total);
         Copeiro copeiro = new Copeiro("Beltrano");
         copeiro.lavar(false);
     }

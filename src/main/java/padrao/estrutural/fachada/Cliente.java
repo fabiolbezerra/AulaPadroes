@@ -8,7 +8,7 @@ public class Cliente {
         final int MESA = 10;
         Garcom fulano = new Garcom("Fulano");
         fulano.receberPedido("Quero um Filé da casa e uma garafa de vinho", MESA);
-        System.out.println(" . . . depois de consumir o pedido . . . ");
+        System.out.println("\n . . . depois de consumir o pedido . . . \n");
         fulano.cobrarPedido(MESA);        
     }
 }

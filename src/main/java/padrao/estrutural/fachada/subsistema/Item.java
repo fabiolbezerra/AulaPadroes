@@ -6,9 +6,10 @@ public class Item {
     private double preco;
     private String observacao;
 
-    public Item(String nome, double preco) {
+    public Item(String nome, double preco, String observacao) {
         this.nome = nome;
         this.preco = preco;
+        this.observacao = observacao;
     }
 
     public String getNome() {
@@ -21,10 +22,6 @@ public class Item {
 
     public String getObservacao() {
         return observacao;
-    }
-
-    public void setObservacao(String observacao) {
-        this.observacao = observacao;
     }
 
 }

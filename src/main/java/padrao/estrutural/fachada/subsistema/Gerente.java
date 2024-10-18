@@ -13,6 +13,6 @@ public class Gerente {
     }
 
     public void receber(Pedido pedido) {
-        System.out.println("Registrando no caixa " + pedido.getTotal());
+        System.out.printf("Registrando no caixa R$ %.2f\n", pedido.getTotal());
     }
 }

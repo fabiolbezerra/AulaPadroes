@@ -16,7 +16,7 @@ public class Copeiro {
         if (panelas) {
             System.out.println("Lavando as panelas da preparação do pedido");
         } else {
-            System.out.println("Lavando pratos e talheres do pedido");
+            System.out.println("Lavando pratos e talheres da mesa");
         }
     }
 }
