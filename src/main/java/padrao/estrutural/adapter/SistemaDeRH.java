@@ -5,6 +5,7 @@
  */
 package padrao.estrutural.adapter;
 
+import padrao.estrutural.adapter.atual.BibliotecaAntiga;
 import padrao.estrutural.adapter.atual.ControleDePonto;
 import padrao.estrutural.adapter.atual.Funcionario;
 import padrao.estrutural.adapter.novo.BibliotecaNova;
@@ -16,10 +17,22 @@ import padrao.estrutural.adapter.novo.BibliotecaNova;
 public class SistemaDeRH {
 
     public static void main(String[] args) {
-        ControleDePonto controleDePonto = new ControleDePontoAdapter(new BibliotecaNova());
+        //Dados do funcionário
         Funcionario funcionario = new Funcionario();
         funcionario.setId(1);
         funcionario.setNome("Fábio");
+
+        //Interface do controle de ponto
+        ControleDePonto controleDePonto = null;
+
+        //Integração com a biblioteca antiga
+        controleDePonto = new BibliotecaAntiga();
+        controleDePonto.registraEntrada(funcionario);
+        System.out.println("\n-.-.-.-\n");
+        controleDePonto.registraSaida(funcionario);
+
+        //Integração com a biblioteca nova (adaptada para a mesma interface)
+        controleDePonto = new ControleDePontoAdapter(new BibliotecaNova());
         controleDePonto.registraEntrada(funcionario);
         System.out.println("\n-.-.-.-\n");
         controleDePonto.registraSaida(funcionario);

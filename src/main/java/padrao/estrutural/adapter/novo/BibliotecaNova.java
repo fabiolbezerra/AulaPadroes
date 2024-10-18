@@ -12,9 +12,11 @@ public class BibliotecaNova {
 
     public void registra(int idDoFuncionario, boolean entrada) {
         if (entrada) {
-            System.out.println("BibliotecaNova: Registrando entrada do funcionário " + idDoFuncionario);
+            System.out.println("BibliotecaNova");
+            System.out.println("Registrando *entrada* do funcionário " + idDoFuncionario);
         } else {
-            System.out.println("BibliotecaNova: Registrando saída do funcionário " + idDoFuncionario);
+            System.out.println("BibliotecaNova");
+            System.out.println("Registrando *saída* do funcionário " + idDoFuncionario);
         }
     }
 }
