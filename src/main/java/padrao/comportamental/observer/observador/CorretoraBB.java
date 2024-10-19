@@ -16,7 +16,7 @@ public class CorretoraBB implements Corretora {
     @Override
     public void notificar(Acao acao) {
         System.out.println("Corretora BB");
-        System.out.println("A ação " + acao.getCodigo() + " alterou seu valor para " + acao.getValor());
+        System.out.printf("%s = R$ %.2f\n", acao.getCodigo(), acao.getValor());
     }
 
 }

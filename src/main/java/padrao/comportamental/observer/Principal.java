@@ -5,6 +5,7 @@
  */
 package padrao.comportamental.observer;
 
+import padrao.comportamental.observer.observador.Corretora;
 import padrao.comportamental.observer.observador.CorretoraBB;
 import padrao.comportamental.observer.observador.CorretoraXPTO;
 import padrao.comportamental.observer.sujeito.Acao;
@@ -19,27 +20,29 @@ public class Principal {
 
     public static void main(String[] args) {
         //Ações
-        Acao valeon = new AcaoON("VALE3", 30);
-        Acao valepn = new AcaoON("VALE5", 50);
-        Acao petrobrason = new AcaoPN("PETR3", 3);
-        Acao petrobraspn = new AcaoPN("PETR4", 5);
+        Acao valeON = new AcaoON("VALE3", 30);
+        Acao valePN = new AcaoON("VALE5", 50);
+        Acao petrobrasON = new AcaoPN("PETR3", 3);
+        Acao petrobrasPN = new AcaoPN("PETR4", 5);
         
         //Corretoras
-        CorretoraBB corretoraBB = new CorretoraBB();
-        CorretoraXPTO corretoraXPTO = new CorretoraXPTO();
+        Corretora corretoraBB = new CorretoraBB();
+        Corretora corretoraXPTO = new CorretoraXPTO();
         
-        //Interesses das corretoras
-        valeon.registraInteressado(corretoraBB);
-        valeon.registraInteressado(corretoraXPTO);
-        valepn.registraInteressado(corretoraBB); //apenas a corretora BB está interessada na valepn
-        petrobrason.registraInteressado(corretoraXPTO); //apenas a corretora XPTO está interessada na petrobrason
-        petrobraspn.registraInteressado(corretoraBB);
-        petrobraspn.registraInteressado(corretoraXPTO);
+        //Ações que a corretoraBB tem interesse
+        valeON.registraInteressado(corretoraBB);
+        petrobrasPN.registraInteressado(corretoraBB);
+        valePN.registraInteressado(corretoraBB); //apenas a corretora BB está interessada na valePN
+
+        //Ações que a corretoraXPTO tem interesse
+        valeON.registraInteressado(corretoraXPTO);
+        petrobrasON.registraInteressado(corretoraXPTO); //apenas a corretora XPTO está interessada na petrobrasON
+        petrobrasPN.registraInteressado(corretoraXPTO);
         
-        //Alterando o valor das ações
-        valeon.setValor(31.1);
-        valepn.setValor(49);
-        petrobrason.setValor(3.5);
-        petrobraspn.setValor(5.9);
+        //Alterando o valor das ações (durante operação no mercado)
+        valeON.setValor(31.1);
+        valePN.setValor(49);
+        petrobrasON.setValor(3.5);
+        petrobrasPN.setValor(5.9);
     }
 }

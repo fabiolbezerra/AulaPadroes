@@ -41,6 +41,14 @@ public abstract class Acao {
         }
     }
 
+    public void registraInteressado(Corretora corretora) {
+        corretoras.add(corretora);
+    }
+
+    public void desregistraInteressado(Corretora corretora) {
+        corretoras.remove(corretora);
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -61,14 +69,6 @@ public abstract class Acao {
             return false;
         }
         return true;
-    }
-
-    public void registraInteressado(Corretora corretora) {
-        corretoras.add(corretora);
-    }
-
-    public void desregistraInteressado(Corretora corretora) {
-        corretoras.remove(corretora);
     }
 
 }

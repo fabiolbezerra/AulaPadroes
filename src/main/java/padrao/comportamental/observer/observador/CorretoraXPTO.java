@@ -16,7 +16,7 @@ public class CorretoraXPTO implements Corretora {
     @Override
     public void notificar(Acao acao) {
         System.out.println("Corretora XPTO");
-        System.out.println("A ação " + acao.getCodigo() + " alterou seu valor para " + acao.getValor());
+        System.out.printf("Ação [%s, R$ %.2f]\n", acao.getCodigo(), acao.getValor());
     }
 
 }
