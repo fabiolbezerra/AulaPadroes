@@ -1,5 +1,7 @@
 package padrao.comportamental.templatemethod.jogos;
 
+import padrao.comportamental.templatemethod.Jogo;
+
 public class Monopolio extends Jogo {
     @Override
     protected void lancarDados() {

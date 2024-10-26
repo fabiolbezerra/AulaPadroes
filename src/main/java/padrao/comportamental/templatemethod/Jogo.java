@@ -1,7 +1,7 @@
-package padrao.comportamental.templatemethod.jogos;
+package padrao.comportamental.templatemethod;
 
 public abstract class Jogo {
-    public void minhaVezDeJogar(String jogador) {
+    public final void minhaVezDeJogar(String jogador) {
         System.out.printf("%s está jogando ...\n", jogador);
         lancarDados();
         movimentarPecas();

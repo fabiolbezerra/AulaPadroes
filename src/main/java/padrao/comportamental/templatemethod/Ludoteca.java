@@ -1,6 +1,5 @@
 package padrao.comportamental.templatemethod;
 
-import padrao.comportamental.templatemethod.jogos.Jogo;
 import padrao.comportamental.templatemethod.jogos.Ludo;
 import padrao.comportamental.templatemethod.jogos.Monopolio;
 
