@@ -1,8 +1,9 @@
 package padrao.comportamental.command.comandos;
 
 import padrao.comportamental.command.Brinquedo;
+import padrao.comportamental.command.Comando;
 
-public class MoverParaTras implements Comando{
+public class MoverParaTras implements Comando {
     private int distancia = 10;
     private Brinquedo brinquedo;
 

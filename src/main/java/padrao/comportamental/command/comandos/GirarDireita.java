@@ -1,8 +1,9 @@
 package padrao.comportamental.command.comandos;
 
 import padrao.comportamental.command.Brinquedo;
+import padrao.comportamental.command.Comando;
 
-public class GirarDireita implements Comando{
+public class GirarDireita implements Comando {
     private double graus = 90.0;
     private Brinquedo brinquedo;
 
