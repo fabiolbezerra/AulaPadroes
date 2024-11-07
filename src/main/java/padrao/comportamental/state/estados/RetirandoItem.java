@@ -23,6 +23,11 @@ public class RetirandoItem implements Estado{
     @Override
     public void retirarItem() {
         System.out.println("Retirando item pago do dispensário");
-        contexto.mudar(new SelecionandoItem(contexto));
+        boolean temEstoque = false;
+        if (temEstoque) {
+            contexto.mudar(new SelecionandoItem(contexto));
+        } else {
+            contexto.mudar(new SemEstoque());
+        }
     }
 }

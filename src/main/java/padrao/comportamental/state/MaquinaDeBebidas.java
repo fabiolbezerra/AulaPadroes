@@ -2,9 +2,10 @@ package padrao.comportamental.state;
 
 import padrao.comportamental.state.estados.Estado;
 import padrao.comportamental.state.estados.SelecionandoItem;
+import padrao.comportamental.state.estados.SemEstoque;
 
 public class MaquinaDeBebidas {
-    private Estado estadoCorrente = new SelecionandoItem(this);
+    private Estado estadoCorrente = new SemEstoque();
 
     public void mudar(Estado estado) {
         estadoCorrente = estado;
