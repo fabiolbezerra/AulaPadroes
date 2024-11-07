@@ -23,12 +23,12 @@ public class ControleDePontoAdapter implements ControleDePonto {
 
     @Override
     public void registraSaida(Funcionario funcionario) {
-        controle.registra(funcionario.getId(), true);
+        controle.registra(funcionario.getId(), false);
     }
 
     @Override
     public void registraEntrada(Funcionario funcionario) {
-        controle.registra(funcionario.getId(), false);
+        controle.registra(funcionario.getId(), true);
     }
 
 }
