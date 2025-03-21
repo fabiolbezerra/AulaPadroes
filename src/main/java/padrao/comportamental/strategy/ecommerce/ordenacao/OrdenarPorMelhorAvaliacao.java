@@ -11,9 +11,9 @@ public class OrdenarPorMelhorAvaliacao implements OrdenarProdutos {
     private Comparator comparador = new Comparator() {
         @Override
         public int compare(Object o1, Object o2) {
-            Double preco1 = ((Produto) o1).getAvaliacao();
-            Double preco2 = ((Produto) o2).getAvaliacao();
-            return preco2.compareTo(preco1);
+            Double avaliacao1 = ((Produto) o1).getAvaliacao();
+            Double avaliacao2 = ((Produto) o2).getAvaliacao();
+            return avaliacao2.compareTo(avaliacao1);
         }
     };
 
